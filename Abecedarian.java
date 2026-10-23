@@ -11,7 +11,7 @@ public class Abecedarian {
                 System.out.println("Please try again and put in some combination of letters.");
                 System.out.println();
             } else{
-            System.out.println(isAbecedarian(a));
+            System.out.println(isAbecedarian(a.toLowerCase()));
             System.out.println();
             }
         }
