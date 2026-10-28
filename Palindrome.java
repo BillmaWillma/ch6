@@ -14,23 +14,21 @@ public class Palindrome {
     public static boolean isPalindrome(String str) {
         String b = "";
         String c = "";
-        String nonletter = ",.:;()[]{}!@#$%^&* ";
+        String nonletter = ",.:;()[]{}!?@#$%^&* ";
         for (int i = 0; i < str.length(); i++) {
-            if (!str.substring(i, i + 1).contains(nonletter)) {
+            if (!nonletter.contains(str.substring(i, i + 1))) {
                 b = b + str.charAt(i);
             } else {
                 b = b + "";
             }
         }
         for (int i = str.length() - 1; i >= 0; i--) {
-             if (!str.substring(i, i + 1).contains(nonletter)) {
-            c = c + str.charAt(i);
-		} else{
-			c=c+"";
+            if (!nonletter.contains(str.substring(i, i + 1))) {
+                c = c + str.charAt(i);
+            } else {
+                c = c + "";
+            }
         }
-	}
-		System.out.println(b);
-		System.out.println(c);
         return b.equals(c);
-}
+    }
 }
