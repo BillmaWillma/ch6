@@ -7,7 +7,6 @@ public class PigLatin {
             System.out.println(
                 "Input a sentence containing only letters and spaces to translate into pig latin.");
             String a = in.nextLine();
-
             System.out.println(pigLatin(a));
             System.out.println();
         }
@@ -17,18 +16,20 @@ public class PigLatin {
         String c = "";
         int d = 0;
         for (int i = 0; i < msg.length(); i++) {
-            if (msg.charAt(i) == ' ' && i>d) {
+            if (msg.charAt(i) == ' ') {
                     c = c + translate(msg.substring(d, i)) + " ";
-                    d=i;
+                    d=i+1;
             }
         }
+        c = c + translate(msg.substring(d));
         return c;
+        
     }
 
     public static String translate(String s) {
         String b = "";
         if (s.length() <= 2) {
-            b = b;
+            b = s;
         }
         if (s.length() > 2) {
             for (int i = 1; i < s.length(); i++) {
